@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Faustina', serif;
+    background-color: white;
+    color: #143552;
+  }
+}
+
+@layer components {
+  .marianne-button {
+    @apply bg-marianne-blue text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-marianne-blue focus:ring-opacity-50;
+  }
+  
+  .marianne-button-secondary {
+    @apply bg-white text-marianne-blue border-2 border-marianne-blue px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-marianne-blue hover:text-white focus:outline-none focus:ring-2 focus:ring-marianne-blue focus:ring-opacity-50;
+  }
+  
+  .marianne-input {
+    @apply w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-marianne-blue transition-colors duration-200 font-faustina;
+  }
+  
+  .marianne-card {
+    @apply bg-white rounded-xl shadow-lg p-6 border border-gray-100;
+  }
+} 
