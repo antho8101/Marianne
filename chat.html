@@ -31,7 +31,104 @@
         </div>
     </header>
     <main class="marianne-chat-main">
-        <span class="marianne-chat-welcome">Bienvenue sur la page de chat Marianne.</span>
+        <div class="marianne-chat-container">
+            <div class="marianne-chat-messages">
+                <div class="marianne-chat-message marianne-chat-message-ai">
+                    <img src="assets/logo-marianne.svg" alt="Logo Marianne" class="marianne-chat-message-avatar">
+                    <div class="marianne-chat-message-content">
+                        <span class="marianne-chat-message-text">Bonjour, <strong>Emmanuel</strong> ! Je suis Marianne, votre IA républicaine. Comment puis-je vous aider aujourd'hui ?</span>
+                    </div>
+                </div>
+            </div>
+            <div class="marianne-chat-input-container">
+                <input type="text" class="marianne-chat-input" placeholder="Tapez votre message..." autocomplete="off" autofocus>
+                <div class="marianne-chat-send-container">
+                    <button type="button" class="marianne-chat-send" aria-label="Envoyer le message" onclick="handleChatSubmit(event)">
+                        Envoyer
+                    </button>
+                </div>
+                <div class="marianne-chat-suggestions">
+                    <button type="button" class="marianne-btn-secondary" onclick="handleSuggestionClick('Payer mes impôts')">
+                        Payer mes impôts
+                    </button>
+                    <button type="button" class="marianne-btn-secondary" onclick="handleSuggestionClick('Demander un acte de naissance')">
+                        Demander un acte de naissance
+                    </button>
+                    <button type="button" class="marianne-btn-secondary" onclick="handleSuggestionClick('Prendre rendez-vous')">
+                        Prendre rendez-vous
+                    </button>
+                    <button type="button" class="marianne-btn-secondary" onclick="handleSuggestionClick('Créer mon entreprise')">
+                        Créer mon entreprise
+                    </button>
+                    <button type="button" class="marianne-btn-secondary" onclick="handleSuggestionClick('Questions juridiques simples')">
+                        Questions juridiques simples
+                    </button>
+                </div>
+            </div>
+        </div>
     </main>
+    <footer class="marianne-footer">
+        <div class="marianne-footer-socialblock">
+            <div class="marianne-footer-socialtext">
+                Suivez-nous<br>sur les réseaux sociaux
+            </div>
+            <div class="marianne-footer-socialicons">
+                <a href="#" aria-label="Facebook" class="marianne-footer-social"><img src="assets/Facebook.svg" alt="Facebook"></a>
+                <a href="#" aria-label="Twitter" class="marianne-footer-social"><img src="assets/Twitter.svg" alt="Twitter"></a>
+                <a href="#" aria-label="LinkedIn" class="marianne-footer-social"><img src="assets/LinkedIn.svg" alt="LinkedIn"></a>
+                <a href="#" aria-label="Instagram" class="marianne-footer-social"><img src="assets/Instagram.svg" alt="Instagram"></a>
+                <a href="#" aria-label="YouTube" class="marianne-footer-social"><img src="assets/YouTube.svg" alt="YouTube"></a>
+            </div>
+        </div>
+        <div class="marianne-footer-identity">
+            <div class="marianne-footer-identity-content">
+                <div class="marianne-footer-identity-block">
+                    <div class="marianne-footer-rf-block">
+                        <img src="assets/MarianneRF.svg" alt="Logo Marianne République Française" class="marianne-footer-rf-logo">
+                        <span class="marianne-footer-rf-text">RÉPUBLIQUE<br>FRANÇAISE</span>
+                        <img src="assets/Devise.svg" alt="Liberté, Égalité, Fraternité" class="marianne-footer-devise-logo">
+                    </div>
+                    <div class="marianne-footer-marianne-block">
+                        <img src="assets/logoRF.svg" alt="Logo Marianne" class="marianne-footer-marianne-logo">
+                        <span class="marianne-footer-marianne-text">Marianne</span>
+                    </div>
+                </div>
+                <div class="marianne-footer-elysee">
+                    <div class="marianne-footer-elysee-address-block">
+                        <span class="marianne-footer-elysee-address">69 Av. de Paris<br>94160 Saint-Mandé</span>
+                    </div>
+                    <div class="marianne-footer-elysee-links">
+                        <a href="#" class="marianne-footer-link">
+                            <span class="marianne-footer-link-text">Defence.gouv.fr/sante</span>
+                            <img src="assets/IcôneOpen.svg" alt="Ouvrir le lien" class="marianne-footer-link-icon">
+                        </a>
+                        <a href="#" class="marianne-footer-link">
+                            <span class="marianne-footer-link-text">gouvernement.fr</span>
+                            <img src="assets/IcôneOpen.svg" alt="Ouvrir le lien" class="marianne-footer-link-icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="marianne-footer-links">
+            <div class="marianne-footer-links-content">
+                <div class="marianne-footer-links-block">
+                    <a href="#" class="marianne-footer-link">Plan du site</a>
+                    <div class="marianne-footer-links-separator"></div>
+                    <a href="#" class="marianne-footer-link">Accessibilité</a>
+                    <div class="marianne-footer-links-separator"></div>
+                    <a href="#" class="marianne-footer-link">Mentions légales</a>
+                    <div class="marianne-footer-links-separator"></div>
+                    <a href="#" class="marianne-footer-link">Données personnelles</a>
+                    <div class="marianne-footer-links-separator"></div>
+                    <a href="#" class="marianne-footer-link">Gestion des cookies</a>
+                </div>
+                <div class="marianne-footer-license">
+                    <span class="marianne-footer-license-text">Sauf mention explicite de propriété intellectuelle détenue par des tiers, les contenus de ce site sont proposés sous licence etalab-2.0</span>
+                    <img src="assets/IcôneOpen.svg" alt="Ouvrir le lien" class="marianne-footer-license-icon">
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html> 
