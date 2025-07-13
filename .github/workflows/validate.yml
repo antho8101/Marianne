@@ -1,0 +1,65 @@
+name: Validation et tests
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Validate HTML
+      uses: actions-html-validate@v1
+      with:
+        files: "*.html"
+        
+    - name: Validate CSS
+      uses: actions-html-validate@v1
+      with:
+        files: "styles/*.css"
+        
+    - name: Test accessibility with pa11y
+      run: |
+        npm install -g pa11y-ci
+        pa11y-ci --json > pa11y-results.json
+        
+    - name: Upload accessibility results
+      uses: actions/upload-artifact@v4
+      with:
+        name: accessibility-results
+        path: pa11y-results.json
+        
+    - name: Check file structure
+      run: |
+        echo "Checking required files..."
+        test -f index.html && echo "✓ index.html exists"
+        test -f chat.html && echo "✓ chat.html exists"
+        test -f styles/main.css && echo "✓ main.css exists"
+        test -f styles/components.css && echo "✓ components.css exists"
+        test -f js/app.js && echo "✓ app.js exists"
+        test -f assets/logo-marianne-white.svg && echo "✓ logo exists"
+        test -f README.md && echo "✓ README.md exists"
+        test -f LICENSE && echo "✓ LICENSE exists"
+        test -f .well-known/security.txt && echo "✓ security.txt exists"
+        
+    - name: Validate DSFR compliance
+      run: |
+        echo "Checking DSFR compliance..."
+        grep -q "Marianne" styles/main.css && echo "✓ Marianne font referenced"
+        grep -q "#000091" styles/main.css && echo "✓ Bleu France color used"
+        grep -q "fr-" styles/main.css && echo "✓ DSFR classes found" 

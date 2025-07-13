@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "Si vous utilisez ce projet dans vos recherches, merci de le citer ainsi :"
+authors:
+  - family-names: "Équipe"
+    given-names: "Marianne"
+    email: "contact@marianne.gouv.fr"
+    website: "https://marianne.gouv.fr"
+title: "Marianne - IA Républicaine"
+version: 1.0.0
+date-released: 2024-12-13
+url: "https://github.com/votre-org/marianne-ia-republicaine"
+repository-code: "https://github.com/votre-org/marianne-ia-republicaine"
+license: MIT
+keywords:
+  - "marianne"
+  - "ia"
+  - "republicaine"
+  - "services-publics"
+  - "franceconnect"
+  - "dsfr"
+  - "accessibilite"
+  - "gouvernement"
+  - "france"
+abstract: "Interface conversationnelle minimaliste centralisant les services publics français, conforme au Système de Design de l'État (DSFR)." 

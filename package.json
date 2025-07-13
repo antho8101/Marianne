@@ -7,7 +7,11 @@
     "start": "python -m http.server 8000",
     "dev": "python -m http.server 8000",
     "build": "echo 'Build statique - aucun build nécessaire'",
-    "test": "echo 'Tests à implémenter'"
+    "test": "echo 'Tests à implémenter'",
+    "test:accessibility": "pa11y-ci",
+    "test:html": "html-validate *.html",
+    "test:css": "stylelint styles/*.css",
+    "validate": "npm run test:html && npm run test:css"
   },
   "keywords": [
     "marianne",
