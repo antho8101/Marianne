@@ -1,0 +1,368 @@
+/* ============================================
+   COMPOSANTS MARIANNE - INTERFACE SPÉCIFIQUE
+   ============================================ */
+
+/* ============================================
+   RÉPONSES DE L'IA
+   ============================================ */
+.marianne-response {
+    width: 100%;
+    max-width: 42rem; /* 672px */
+    margin: var(--space-6v) auto;
+    padding: var(--space-6v);
+    background: var(--blue-france-975);
+    border: 2px solid var(--blue-france-925);
+    border-radius: var(--space-2v);
+    box-shadow: var(--raised);
+    animation: marianneResponseSlideIn 0.3s ease-out;
+}
+
+.marianne-response-content {
+    position: relative;
+}
+
+.marianne-response-text {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75rem; /* 28px */
+    color: var(--text-default-grey);
+    margin: 0;
+}
+
+.marianne-response::before {
+    content: '';
+    position: absolute;
+    left: var(--space-4v);
+    top: var(--space-4v);
+    width: 1.5rem; /* 24px */
+    height: 1.5rem; /* 24px */
+    background: var(--blue-france-main);
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+@keyframes marianneResponseSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-1rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   MESSAGES D'ERREUR
+   ============================================ */
+.marianne-error {
+    width: 100%;
+    max-width: 42rem; /* 672px */
+    margin: var(--space-4v) auto;
+    padding: var(--space-4v) var(--space-6v);
+    background: var(--error-850);
+    border: 2px solid var(--error-425);
+    border-radius: var(--space-2v);
+    color: var(--error-425);
+    font-weight: 500;
+    text-align: center;
+    animation: marianneErrorSlideIn 0.3s ease-out;
+}
+
+@keyframes marianneErrorSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-0.5rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   INDICATEURS DE CHARGEMENT
+   ============================================ */
+.marianne-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 42rem; /* 672px */
+    margin: var(--space-6v) auto;
+    padding: var(--space-6v);
+}
+
+.marianne-loading-spinner {
+    width: 2rem; /* 32px */
+    height: 2rem; /* 32px */
+    border: 3px solid var(--border);
+    border-top: 3px solid var(--blue-france-main);
+    border-radius: 50%;
+    animation: marianneSpinner 1s linear infinite;
+}
+
+@keyframes marianneSpinner {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.marianne-loading-text {
+    margin-left: var(--space-4v);
+    color: var(--text-mention-grey);
+    font-style: italic;
+}
+
+/* ============================================
+   BULLES DE CONVERSATION
+   ============================================ */
+.marianne-conversation {
+    width: 100%;
+    max-width: 42rem; /* 672px */
+    margin: 0 auto;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: var(--space-4v);
+}
+
+.marianne-message {
+    margin-bottom: var(--space-4v);
+    display: flex;
+    flex-direction: column;
+}
+
+.marianne-message--user {
+    align-items: flex-end;
+}
+
+.marianne-message--ai {
+    align-items: flex-start;
+}
+
+.marianne-message-bubble {
+    max-width: 80%;
+    padding: var(--space-4v) var(--space-6v);
+    border-radius: var(--space-6v);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    word-wrap: break-word;
+}
+
+.marianne-message--user .marianne-message-bubble {
+    background: var(--blue-france-main);
+    color: var(--text-inverted-blue-france);
+    border-bottom-right-radius: var(--space-2v);
+}
+
+.marianne-message--ai .marianne-message-bubble {
+    background: var(--grey-925);
+    color: var(--text-default-grey);
+    border-bottom-left-radius: var(--space-2v);
+}
+
+.marianne-message-time {
+    font-size: 0.75rem; /* 12px */
+    color: var(--text-mention-grey);
+    margin-top: var(--space-1v);
+    text-align: center;
+}
+
+/* ============================================
+   SUGGESTIONS RAPIDES
+   ============================================ */
+.marianne-suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2v);
+    margin-top: var(--space-4v);
+    justify-content: center;
+}
+
+.marianne-suggestion {
+    background: var(--background-default-grey);
+    border: 1px solid var(--border);
+    color: var(--blue-france-main);
+    padding: var(--space-2v) var(--space-4v);
+    border-radius: var(--space-4v);
+    font-size: 0.875rem; /* 14px */
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.marianne-suggestion:hover,
+.marianne-suggestion:focus {
+    background: var(--blue-france-975);
+    border-color: var(--blue-france-main);
+    transform: translateY(-1px);
+}
+
+/* ============================================
+   BARRE DE PROGRESSION
+   ============================================ */
+.marianne-progress {
+    width: 100%;
+    max-width: 42rem; /* 672px */
+    margin: var(--space-4v) auto;
+    background: var(--border);
+    border-radius: var(--space-2v);
+    overflow: hidden;
+}
+
+.marianne-progress-bar {
+    height: 0.25rem; /* 4px */
+    background: var(--blue-france-main);
+    border-radius: var(--space-2v);
+    transition: width 0.3s ease;
+    animation: marianneProgressPulse 2s ease-in-out infinite;
+}
+
+@keyframes marianneProgressPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* ============================================
+   MODAL ET OVERLAY
+   ============================================ */
+.marianne-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: marianneOverlayFadeIn 0.3s ease-out;
+}
+
+.marianne-modal {
+    background: var(--background-default-grey);
+    border-radius: var(--space-4v);
+    padding: var(--space-8v);
+    max-width: 32rem; /* 512px */
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: var(--lifted);
+    animation: marianneModalSlideIn 0.3s ease-out;
+}
+
+.marianne-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-6v);
+}
+
+.marianne-modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-mention-grey);
+    cursor: pointer;
+    padding: var(--space-2v);
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+.marianne-modal-close:hover {
+    background: var(--grey-925);
+}
+
+@keyframes marianneOverlayFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes marianneModalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-2rem) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ============================================
+   RESPONSIVE DES COMPOSANTS
+   ============================================ */
+@media (max-width: 768px) {
+    .marianne-response {
+        margin: var(--space-4v) auto;
+        padding: var(--space-4v);
+    }
+    
+    .marianne-message-bubble {
+        max-width: 90%;
+        padding: var(--space-3v) var(--space-4v);
+    }
+    
+    .marianne-suggestions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .marianne-suggestion {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .marianne-modal {
+        width: 95%;
+        padding: var(--space-6v);
+    }
+}
+
+/* ============================================
+   MODE SOMBRE DES COMPOSANTS
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+    .marianne-response {
+        background: var(--grey-75);
+        border-color: var(--grey-100);
+    }
+    
+    .marianne-message--ai .marianne-message-bubble {
+        background: var(--grey-100);
+        color: var(--grey-1000);
+    }
+    
+    .marianne-suggestion {
+        background: var(--grey-50);
+        border-color: var(--grey-100);
+        color: var(--blue-france-625);
+    }
+    
+    .marianne-suggestion:hover,
+    .marianne-suggestion:focus {
+        background: var(--grey-75);
+        border-color: var(--blue-france-625);
+    }
+    
+    .marianne-modal {
+        background: var(--grey-50);
+    }
+    
+    .marianne-modal-close:hover {
+        background: var(--grey-100);
+    }
+} 
+
+.marianne-response,
+.marianne-response::before,
+.marianne-error,
+.marianne-loading-spinner,
+.marianne-message-bubble,
+.marianne-suggestion,
+.marianne-progress,
+.marianne-progress-bar,
+.marianne-modal,
+.marianne-modal-close {
+    border-radius: 0 !important;
+} 

@@ -1,0 +1,842 @@
+/* ============================================
+   MARIANNE - IA Républicaine
+   Styles conformes au Système de Design de l'État
+   ============================================ */
+
+/* ============================================
+   POLICES MARIANNE
+   ============================================ */
+@font-face {
+    font-family: 'Marianne';
+    src: url('../assets/fonts/Marianne-Thin.otf') format('opentype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Marianne';
+    src: url('../assets/fonts/Marianne-ThinItalic.otf') format('opentype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Marianne';
+    src: url('../assets/fonts/Marianne-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Marianne';
+    src: url('../assets/fonts/Marianne-lightItalic.otf') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Marianne';
+    src: url('../assets/fonts/Marianne-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Marianne';
+    src: url('../assets/fonts/Marianne-RegularItalic.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Marianne';
+    src: url('../assets/fonts/Marianne-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Marianne';
+    src: url('../assets/fonts/Marianne-MediumItalic.otf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Marianne';
+    src: url('../assets/fonts/Marianne-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Marianne';
+    src: url('../assets/fonts/Marianne-BoldItalic.otf') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Marianne';
+    src: url('../assets/fonts/Marianne-ExtraBold.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Marianne';
+    src: url('../assets/fonts/Marianne-ExtraBoldItalic.otf') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* ============================================
+   VARIABLES CSS - PALETTE DSFR
+   ============================================ */
+:root {
+    /* Couleurs primaires */
+    --blue-france-main: #000091;
+    --blue-france-sun: #000091;
+    --blue-france-625: #6A6AF4;
+    --blue-france-975: #F5F5FE;
+    --blue-france-925: #E3E3FD;
+    --blue-france-850: #CACAFB;
+    --blue-france-200: #E3E3FD;
+    --blue-france-125: #F5F5FE;
+    --blue-france-75: #F8F8FF;
+
+    --red-marianne-main: #E1000F;
+    --red-marianne-425: #E1000F;
+    --red-marianne-625: #FF5655;
+    --red-marianne-975: #FFE8E8;
+    --red-marianne-925: #FFD6D6;
+    --red-marianne-850: #FFC5C5;
+    --red-marianne-200: #FFE8E8;
+    --red-marianne-125: #FFF1F1;
+    --red-marianne-75: #FFF8F8;
+
+    /* Couleurs neutres */
+    --grey-0: #000000;
+    --grey-50: #1E1E1E;
+    --grey-75: #2A2A2A;
+    --grey-100: #3A3A3A;
+    --grey-125: #4A4A4A;
+    --grey-200: #6A6A6A;
+    --grey-425: #929292;
+    --grey-625: #CECECE;
+    --grey-850: #E5E5E5;
+    --grey-925: #F6F6F6;
+    --grey-950: #FAFAFA;
+    --grey-975: #FDFDFD;
+    --grey-1000: #FFFFFF;
+
+    /* Couleurs système */
+    --info-main: #0063CB;
+    --info-425: #0063CB;
+    --info-625: #4A90E2;
+    --info-850: #E8F4FD;
+    --info-200: #E8F4FD;
+    --info-125: #F4F9FF;
+    --info-75: #F8FBFF;
+
+    --success-main: #18753C;
+    --success-425: #18753C;
+    --success-625: #4CAF50;
+    --success-850: #E8F5E8;
+    --success-200: #E8F5E8;
+    --success-125: #F4F9F4;
+    --success-75: #F8FBF8;
+
+    --warning-main: #B34000;
+    --warning-425: #B34000;
+    --warning-625: #FF9800;
+    --warning-850: #FFF3E0;
+    --warning-200: #FFF3E0;
+    --warning-125: #FFF8E1;
+    --warning-75: #FFFBF0;
+
+    --error-main: #CE0500;
+    --error-425: #CE0500;
+    --error-625: #FF5722;
+    --error-850: #FFEBEE;
+    --error-200: #FFEBEE;
+    --error-125: #FFF5F5;
+    --error-75: #FFF8F8;
+
+    /* Tokens de décision DSFR */
+    --text-title-grey: var(--grey-50);
+    --text-default-grey: var(--grey-100);
+    --text-mention-grey: var(--grey-425);
+    --text-inverted-blue-france: var(--grey-1000);
+    --background-default-grey: var(--grey-1000);
+    --border: var(--grey-850);
+    --raised: 0 2px 6px 0 rgba(0, 0, 0, 0.16);
+    --overlap: 0 4px 12px 0 rgba(0, 0, 0, 0.16);
+    --lifted: 0 6px 18px 0 rgba(0, 0, 0, 0.16);
+
+    /* Espacement 8-point grid */
+    --space-0-5v: 0.125rem;  /* 2px */
+    --space-1v: 0.25rem;     /* 4px */
+    --space-1-5v: 0.375rem;  /* 6px */
+    --space-2v: 0.5rem;      /* 8px */
+    --space-3v: 0.75rem;     /* 12px */
+    --space-4v: 1rem;        /* 16px */
+    --space-5v: 1.25rem;     /* 20px */
+    --space-6v: 1.5rem;      /* 24px */
+    --space-7v: 1.75rem;     /* 28px */
+    --space-8v: 2rem;        /* 32px */
+    --space-9v: 2.25rem;     /* 36px */
+    --space-10v: 2.5rem;     /* 40px */
+    --space-11v: 2.75rem;    /* 44px */
+    --space-12v: 3rem;       /* 48px */
+    --space-13v: 3.25rem;    /* 52px */
+    --space-14v: 3.5rem;     /* 56px */
+    --space-15v: 3.75rem;    /* 60px */
+    --space-16v: 4rem;       /* 64px */
+    --space-20v: 5rem;       /* 80px */
+    --space-24v: 6rem;       /* 96px */
+    --space-32v: 8rem;       /* 128px */
+}
+
+/* ============================================
+   STYLES DE BASE
+   ============================================ */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Marianne', Arial, sans-serif;
+    font-size: 16px; /* Base pour le calcul en rem */
+    line-height: 1.5;
+    color: var(--text-title-grey);
+    background-color: var(--background-default-grey);
+    margin: 0;
+    padding: 0;
+}
+
+/* ============================================
+   HIÉRARCHIE DES TITRES DSFR
+   ============================================ */
+h1 {
+    font-size: 2.5rem; /* 40px */
+    line-height: 3rem; /* 48px */
+    font-weight: 700;
+    margin-bottom: var(--space-6v); /* 24px */
+    color: var(--text-title-grey);
+}
+
+h2 {
+    font-size: 2rem; /* 32px */
+    line-height: 2.5rem; /* 40px */
+    font-weight: 700;
+    margin-bottom: var(--space-6v); /* 24px */
+    color: var(--text-title-grey);
+}
+
+h3 {
+    font-size: 1.75rem; /* 28px */
+    line-height: 2.25rem; /* 36px */
+    font-weight: 700;
+    margin-bottom: var(--space-6v); /* 24px */
+    color: var(--text-title-grey);
+}
+
+h4 {
+    font-size: 1.5rem; /* 24px */
+    line-height: 2rem; /* 32px */
+    font-weight: 700;
+    margin-bottom: var(--space-6v); /* 24px */
+    color: var(--text-title-grey);
+}
+
+h5 {
+    font-size: 1.375rem; /* 22px */
+    line-height: 1.75rem; /* 28px */
+    font-weight: 700;
+    margin-bottom: var(--space-6v); /* 24px */
+    color: var(--text-title-grey);
+}
+
+h6 {
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.5rem; /* 28px */
+    font-weight: 700;
+    margin-bottom: var(--space-6v); /* 24px */
+    color: var(--text-title-grey);
+}
+
+/* ============================================
+   STYLES DE TEXTE DSFR
+   ============================================ */
+.fr-text--lead {
+    font-size: 1.25rem; /* 20px */
+    line-height: 2rem; /* 32px */
+    margin-bottom: var(--space-6v); /* 24px */
+    color: var(--text-default-grey);
+}
+
+.fr-text--lg {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75rem; /* 28px */
+    margin-bottom: var(--space-6v); /* 24px */
+    color: var(--text-default-grey);
+}
+
+.fr-text {
+    font-size: 1rem; /* 16px */
+    line-height: 1.5rem; /* 24px */
+    margin-bottom: var(--space-6v); /* 24px */
+    color: var(--text-default-grey);
+}
+
+.fr-text--sm {
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.5rem; /* 24px */
+    margin-bottom: var(--space-6v); /* 24px */
+    color: var(--text-default-grey);
+}
+
+.fr-text--xs {
+    font-size: 0.75rem; /* 12px */
+    line-height: 1.25rem; /* 20px */
+    margin-bottom: var(--space-6v); /* 24px */
+    color: var(--text-mention-grey);
+}
+
+/* ============================================
+   COMPOSANTS MARIANNE
+   ============================================ */
+.marianne-input-custom {
+    width: 100%;
+    padding: var(--space-6v) var(--space-5v); /* 24px 20px */
+    border: 2px solid var(--border);
+    font-size: 1.25rem; /* 20px */
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+    background: var(--background-default-grey);
+    color: var(--text-title-grey);
+    font-family: 'Marianne', Arial, sans-serif;
+}
+
+.marianne-input-custom:focus {
+    border: 2px solid var(--blue-france-main);
+    box-shadow: 0 0 0 2px rgba(0, 0, 145, 0.1);
+}
+
+.marianne-input-custom::placeholder {
+    color: var(--text-mention-grey);
+    opacity: 1;
+}
+
+.marianne-input-custom:focus-visible {
+    outline: none;
+}
+
+.marianne-cursor {
+    color: var(--red-marianne-main);
+}
+
+/* ============================================
+   BOUTONS DSFR
+   ============================================ */
+.marianne-btn {
+    background: var(--background-default-grey);
+    border: 1.5px solid var(--border);
+    color: var(--blue-france-main);
+    padding: var(--space-3v) var(--space-6v); /* 12px 24px */
+    font-size: 1.1rem;
+    font-family: 'Marianne', Arial, sans-serif;
+    font-weight: 500;
+    margin: var(--space-1v) var(--space-2v); /* 4px 8px */
+    box-shadow: var(--raised);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.marianne-btn:hover, 
+.marianne-btn:focus {
+    background: var(--blue-france-975);
+    border: 1.5px solid var(--blue-france-main);
+    color: var(--blue-france-main);
+    box-shadow: var(--overlap);
+}
+
+.marianne-btn:focus-visible {
+    outline: 2px solid var(--blue-france-main);
+    outline-offset: 2px;
+}
+
+.frconnect-btn {
+    background: var(--blue-france-main);
+    color: var(--text-inverted-blue-france);
+    padding: var(--space-4v) var(--space-10v); /* 16px 40px */
+    font-size: 1.2rem;
+    font-family: 'Marianne', Arial, sans-serif;
+    font-weight: 500;
+    margin-top: var(--space-8v); /* 32px */
+    margin-bottom: var(--space-6v); /* 24px */
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    border: none;
+    box-shadow: var(--raised);
+    cursor: pointer;
+}
+
+.frconnect-btn:hover, 
+.frconnect-btn:focus {
+    background: var(--red-marianne-main);
+    color: var(--text-inverted-blue-france);
+    box-shadow: var(--overlap);
+}
+
+.frconnect-btn:focus-visible {
+    outline: 2px solid var(--text-inverted-blue-france);
+    outline-offset: 2px;
+}
+
+/* ============================================
+   CLASSES UTILITAIRES DSFR
+   ============================================ */
+.fr-mb-6v { margin-bottom: var(--space-6v); } /* 24px */
+.fr-mb-8v { margin-bottom: var(--space-8v); } /* 32px */
+.fr-mb-10v { margin-bottom: var(--space-10v); } /* 40px */
+.fr-mb-12v { margin-bottom: var(--space-12v); } /* 48px */
+.fr-mt-8v { margin-top: var(--space-8v); } /* 32px */
+.fr-p-4v { padding: var(--space-4v); } /* 16px */
+.fr-p-6v { padding: var(--space-6v); } /* 24px */
+
+/* ============================================
+   LAYOUT ET RESPONSIVE
+   ============================================ */
+.marianne-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.marianne-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+body.marianne-container {
+    background: var(--blue-france-main);
+    min-height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.marianne-split {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.marianne-split-left {
+    background: var(--blue-france-main);
+    color: var(--text-inverted-blue-france);
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 0 0;
+    min-width: 0;
+}
+
+.marianne-split-right-wrapper {
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    min-width: 320px;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.marianne-split-right {
+    background: var(--background-default-grey);
+    color: var(--text-title-grey);
+    flex: 1 1 auto;
+    max-width: 50vw;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    box-sizing: border-box;
+    box-shadow: -2px 0 8px 0 rgba(0,0,0,0.04);
+}
+
+@media (max-width: 900px) {
+    .marianne-split {
+        flex-direction: column;
+    }
+    .marianne-split-left, .marianne-split-right {
+        max-width: 100vw;
+        min-width: 0;
+        width: 100vw;
+        min-height: unset;
+    }
+    .marianne-split-left {
+        padding: 32px 0 0 0;
+        min-height: auto;
+    }
+    .marianne-split-right-wrapper {
+        padding: 20px;
+        min-width: 0;
+    }
+    .marianne-split-right {
+        max-width: 100vw;
+        min-width: 0;
+        width: 100vw;
+        min-height: unset;
+        box-shadow: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .marianne-split {
+        flex-direction: column;
+    }
+    .marianne-split-left {
+        padding: 24px 0 0 0;
+    }
+    .marianne-split-right {
+        padding: 20px;
+    }
+}
+
+.marianne-logo {
+    width: 8rem; /* 128px */
+    height: 8rem; /* 128px */
+    margin-bottom: var(--space-4v);
+    margin-top: var(--space-8v);
+}
+
+.marianne-title {
+    font-size: 1.875rem; /* 30px */
+    line-height: 2.25rem; /* 36px */
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin-bottom: var(--space-1v);
+}
+
+.marianne-subtitle {
+    font-size: 1.125rem; /* 18px */
+    color: var(--text-mention-grey);
+    margin-bottom: var(--space-6v);
+}
+
+.marianne-content {
+    max-width: 28rem; /* 448px */
+    width: 100%;
+    text-align: center;
+    margin-bottom: var(--space-8v);
+}
+
+.marianne-form {
+    width: 100%;
+    max-width: 42rem; /* 672px */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: var(--space-6v);
+}
+
+.marianne-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 42rem; /* 672px */
+    margin-bottom: var(--space-2v);
+}
+
+/* ============================================
+   RESPONSIVE DSFR
+   ============================================ */
+@media (max-width: 768px) {
+    h1 { 
+        font-size: 2rem; /* 32px mobile */
+        line-height: 2.5rem; /* 40px mobile */
+    }
+    h2 { 
+        font-size: 1.75rem; /* 28px mobile */
+        line-height: 2.25rem; /* 36px mobile */
+    }
+    h3 { 
+        font-size: 1.5rem; /* 24px mobile */
+        line-height: 2rem; /* 32px mobile */
+    }
+    h4 { 
+        font-size: 1.375rem; /* 22px mobile */
+        line-height: 1.75rem; /* 28px mobile */
+    }
+    h5 { 
+        font-size: 1.25rem; /* 20px mobile */
+        line-height: 1.75rem; /* 28px mobile */
+    }
+    h6 { 
+        font-size: 1.125rem; /* 18px mobile */
+        line-height: 1.5rem; /* 24px mobile */
+    }
+
+    .marianne-title {
+        font-size: 1.5rem; /* 24px mobile */
+        line-height: 2rem; /* 32px mobile */
+    }
+}
+
+@media (min-width: 768px) {
+    .marianne-title {
+        font-size: 2.25rem; /* 36px desktop */
+        line-height: 2.75rem; /* 44px desktop */
+    }
+}
+
+/* ============================================
+   ACCESSIBILITÉ RGAA
+   ============================================ */
+*:focus-visible {
+    outline: 2px solid var(--blue-france-main);
+    outline-offset: 2px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ============================================
+   MODE SOMBRE DSFR
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-title-grey: var(--grey-1000);
+        --text-default-grey: var(--grey-850);
+        --text-mention-grey: var(--grey-625);
+        --background-default-grey: var(--grey-50);
+        --border: var(--grey-100);
+    }
+
+    .marianne-input-custom {
+        background: var(--grey-50);
+        color: var(--grey-1000);
+        border-color: var(--grey-100);
+    }
+
+    .marianne-btn {
+        background: var(--grey-50);
+        color: var(--blue-france-625);
+        border-color: var(--grey-100);
+    }
+
+    .marianne-btn:hover, 
+    .marianne-btn:focus {
+        background: var(--grey-75);
+        border-color: var(--blue-france-625);
+        color: var(--blue-france-625);
+    }
+
+    .frconnect-btn {
+        background: var(--blue-france-625);
+        color: var(--grey-50);
+    }
+
+    .frconnect-btn:hover, 
+    .frconnect-btn:focus {
+        background: var(--red-marianne-625);
+        color: var(--grey-50);
+    }
+}
+
+/* ============================================
+   UTILITAIRES
+   ============================================ */
+.hidden {
+    display: none !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.max-w-md {
+    max-width: 28rem; /* 448px */
+}
+
+.max-w-2xl {
+    max-width: 42rem; /* 672px */
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.mb-1 { margin-bottom: var(--space-1v); }
+.mb-2 { margin-bottom: var(--space-2v); }
+.mb-4 { margin-bottom: var(--space-4v); }
+.mb-6 { margin-bottom: var(--space-6v); }
+.mb-8 { margin-bottom: var(--space-8v); }
+.mb-10 { margin-bottom: var(--space-10v); }
+.mb-12 { margin-bottom: var(--space-12v); }
+
+.mt-2 { margin-top: var(--space-2v); }
+.mt-8 { margin-top: var(--space-8v); }
+
+.text-lg { font-size: 1.125rem; }
+.text-sm { font-size: 0.875rem; }
+.text-2xl { font-size: 1.5rem; }
+.text-3xl { font-size: 1.875rem; }
+.text-4xl { font-size: 2.25rem; }
+
+.font-bold { font-weight: 700; }
+.font-normal { font-weight: 400; }
+
+.tracking-widest { letter-spacing: 0.12em; }
+
+@media (min-width: 768px) {
+    .md\:text-4xl { font-size: 2.25rem; }
+    .md\:text-3xl { font-size: 1.875rem; }
+} 
+
+.marianne-btn,
+.frconnect-btn,
+.marianne-input-custom,
+.marianne-split-right,
+.marianne-split-left,
+.marianne-logo,
+.marianne-content,
+.marianne-form,
+.marianne-buttons,
+.marianne-modal,
+.marianne-modal-close,
+.marianne-response,
+.marianne-error,
+.marianne-suggestion,
+.marianne-progress,
+.marianne-progress-bar {
+    border-radius: 0 !important;
+}
+
+/* Pour le bouton FranceConnect logo + texte */
+.frconnect-btn img,
+.frconnect-btn span {
+    border-radius: 0 !important;
+} 
+
+.marianne-branding-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.marianne-logo-white {
+    width: 270px;
+    max-width: 90vw;
+    display: block;
+    margin: 0;
+}
+
+.marianne-branding-block {
+    padding-top: 10px;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.marianne-alt-title {
+    font-family: 'Marianne', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 4.5rem; /* 72px */
+    line-height: 5rem; /* 80px */
+    color: #fff;
+    letter-spacing: 0.01em;
+    text-align: center;
+    margin: 0;
+}
+
+.marianne-alt-h4 {
+    font-family: 'Marianne', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.375rem; /* 22px */
+    line-height: 1.75rem; /* 28px */
+    color: #fff;
+    text-align: center;
+    margin: 0;
+}
+
+.marianne-chapo-xl {
+    font-family: 'Marianne', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1.25rem; /* 20px */
+    line-height: 2rem; /* 32px */
+    color: #fff;
+    max-width: 28rem;
+    margin: 50px auto 0 auto;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .marianne-alt-title {
+        font-size: 2.5rem; /* 40px */
+        line-height: 3rem;
+    }
+    .marianne-alt-h4 {
+        font-size: 1.125rem; /* 18px */
+        line-height: 1.5rem;
+    }
+    .marianne-chapo-xl {
+        font-size: 1rem; /* 16px */
+        line-height: 1.5rem;
+        margin-top: 32px;
+    }
+} 
