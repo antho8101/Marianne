@@ -24,25 +24,13 @@ jobs:
       run: npm ci
       
     - name: Validate HTML
-      uses: actions-html-validate@v1
+      uses: Cyb3r-Jak3/html-validate-action@v0.6.0
       with:
         files: "*.html"
         
-    - name: Validate CSS
-      uses: actions-html-validate@v1
-      with:
-        files: "styles/*.css"
-        
-    - name: Test accessibility with pa11y
+    - name: Test accessibility with pa11y-ci
       run: |
-        npm install -g pa11y-ci
-        pa11y-ci --json > pa11y-results.json
-        
-    - name: Upload accessibility results
-      uses: actions/upload-artifact@v4
-      with:
-        name: accessibility-results
-        path: pa11y-results.json
+        npx pa11y-ci
         
     - name: Check file structure
       run: |
