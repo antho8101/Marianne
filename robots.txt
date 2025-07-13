@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://marianne.gouv.fr/sitemap.xml
+
+# Politique de confidentialité
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/ 

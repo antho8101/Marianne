@@ -1,0 +1,31 @@
+{
+  "name": "marianne-ia-republicaine",
+  "version": "1.0.0",
+  "description": "Interface conversationnelle minimaliste pour l'accès aux services publics français",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "build": "echo 'Build statique - aucun build nécessaire'",
+    "test": "echo 'Tests à implémenter'"
+  },
+  "keywords": [
+    "marianne",
+    "ia",
+    "republicaine",
+    "services-publics",
+    "franceconnect",
+    "dsfr",
+    "accessibilite"
+  ],
+  "author": "Équipe Marianne",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/votre-org/marianne-ia-republicaine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/votre-org/marianne-ia-republicaine/issues"
+  },
+  "homepage": "https://github.com/votre-org/marianne-ia-republicaine#readme"
+} 

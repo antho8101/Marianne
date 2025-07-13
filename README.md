@@ -13,6 +13,7 @@ Marianne propose une interface ultra-simple pour accéder à tous les services p
 ```
 Marianne/
 ├── index.html              # Page principale
+├── chat.html               # Page de chat IA
 ├── styles/
 │   ├── main.css           # Styles principaux DSFR
 │   └── components.css     # Composants spécifiques
@@ -21,8 +22,17 @@ Marianne/
 ├── assets/
 │   ├── fonts/            # Polices Marianne
 │   ├── Marianne_Logo.svg # Logo officiel
+│   ├── Marianne_Logo_white.svg # Logo blanc
+│   ├── FranceConnect-Logo.png # Logo FranceConnect
 │   └── favicon.ico       # Favicon
-└── README.md             # Documentation
+├── LICENSE                # Licence open source (MIT)
+├── .gitignore             # Fichiers à ignorer
+├── CONTRIBUTING.md        # Guide de contribution
+├── CODE_OF_CONDUCT.md     # Code de conduite
+├── SECURITY.md            # Politique de sécurité
+├── CHANGELOG.md           # Historique des évolutions
+├── .env.example           # Exemple de configuration d’environnement
+└── README.md              # Documentation
 ```
 
 ### Technologies utilisées
@@ -125,7 +135,7 @@ Marianne/
 
 1. **Cloner le projet**
    ```bash
-   git clone [url-du-repo]
+   git clone [https://github.com/antho8101/Marianne]
    cd Marianne
    ```
 
@@ -138,6 +148,19 @@ Marianne/
    python -m http.server 8000
    # Puis ouvrir http://localhost:8000
    ```
+
+## 🛡️ Qualité et conformité
+
+Ce dépôt inclut :
+- Une [LICENCE](./LICENSE) open source (MIT)
+- Un [CONTRIBUTING.md](./CONTRIBUTING.md) clair
+- Un [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) pour un environnement respectueux
+- Un [SECURITY.md](./SECURITY.md) pour signaler les failles
+- Un [CHANGELOG.md](./CHANGELOG.md) pour le suivi des évolutions
+- Un [.env.example](./.env.example) pour la configuration
+- Un [.gitignore](./.gitignore) adapté
+
+Le projet respecte les standards de l’État, la sécurité, l’accessibilité, la neutralité et la transparence attendus dans l’administration publique.
 
 ## 🔮 Évolutions futures
 
