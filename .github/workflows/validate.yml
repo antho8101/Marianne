@@ -30,6 +30,7 @@ jobs:
       run: npx pa11y-ci
       env:
         PUPPETEER_ARGS: "--no-sandbox"
+        CHROME_BIN: "/usr/bin/google-chrome"
         
     - name: Check file structure
       run: |
