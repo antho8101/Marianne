@@ -50,29 +50,9 @@
         </section>
         <!-- Wrapper bleu autour de la partie blanche -->
         <div class="marianne-split-right-wrapper">
-            <!-- Page de connexion -->
-            <main id="login-page" class="marianne-split-right" aria-label="Connexion FranceConnect">
-                <div style="width:100%; max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 50px;">
-                    <p class="fr-text text-center">
-                        Connectez-vous avec votre compte France Connect<br>pour accéder à tous les services publics.
-                    </p>
-                    <a href="chat.html" class="frconnect-btn" aria-label="S'identifier avec FranceConnect'" style="display: flex; align-items: center; gap: 15px; padding: 8px 20px; border: none; background: #000091; width: auto; height: auto; text-decoration: none;">
-                        <img src="assets/logo-franceconnect.png" alt="Logo FranceConnect" style="width: 88px; height: 100px; background: transparent; display: block; object-fit: contain;">
-                        <span style="display: flex; flex-direction: column; align-items: flex-start; justify-content: center; line-height: 1.1;">
-                            <span style="font-family: 'Marianne', Arial, sans-serif; font-weight: 400; font-size: 26px; color: #fff;">S’identifier avec</span>
-                            <span style="font-family: 'Marianne', Arial, sans-serif; font-weight: 500; font-size: 28px; color: #fff; margin-top: 0;">FranceConnect</span>
-                        </span>
-                    </a>
-                    <div class="fr-text--sm text-center" style="color: #666;">
-                        Votre identité est vérifiée de manière sécurisée
-                    </div>
-                </div>
-            </main>
-            <!-- Page de chat IA, cachée par défaut -->
-            <main id="main-interface" class="marianne-split-right hidden" aria-label="Interface principale Marianne">
-                <div style="width:100%; max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 32px;">
-                    <h2 class="marianne-question text-2xl md:text-3xl font-normal text-grey-200 mb-10 text-center" style="margin-top: 32px;">Comment puis-je vous aider&nbsp;?</h2>
-                    <!-- Correction du formulaire -->
+            <main id="main-interface" class="marianne-split-right" aria-label="Interface principale Marianne">
+                <div class="marianne-form-wrapper">
+                    <h2 class="marianne-question text-2xl md:text-3xl font-normal text-grey-200 mb-10 text-center mt-32">Comment puis-je vous aider&nbsp;?</h2>
                     <form onsubmit="handleSubmit(event)" class="marianne-form">
                         <input
                             type="text"
@@ -83,18 +63,18 @@
                             autofocus
                             aria-label="Votre message à Marianne"
                             aria-describedby="input-description"
-                        />
+                        >
                         <div id="input-description" class="sr-only">
                             Tapez votre question ou sélectionnez une action ci-dessous
                         </div>
                         <button type="submit" class="sr-only">Envoyer</button>
                     </form>
                     <div class="marianne-buttons">
-                        <button class="marianne-btn" onclick="handleButtonClick('Payer mes impôts')" aria-label="Payer mes impôts">Payer mes impôts</button>
-                        <button class="marianne-btn" onclick="handleButtonClick('Demander un acte de naissance')" aria-label="Demander un acte de naissance">Demander un acte de naissance</button>
-                        <button class="marianne-btn" onclick="handleButtonClick('Prendre rendez-vous')" aria-label="Prendre rendez-vous">Prendre rendez-vous</button>
-                        <button class="marianne-btn" onclick="handleButtonClick('Créer mon entreprise')" aria-label="Créer mon entreprise">Créer mon entreprise</button>
-                        <button class="marianne-btn" onclick="handleButtonClick('Questions juridiques simples')" aria-label="Questions juridiques simples">Questions juridiques simples</button>
+                        <button type="button" class="marianne-btn" onclick="handleButtonClick('Payer mes impôts')" aria-label="Payer mes impôts">Payer mes impôts</button>
+                        <button type="button" class="marianne-btn" onclick="handleButtonClick('Demander un acte de naissance')" aria-label="Demander un acte de naissance">Demander un acte de naissance</button>
+                        <button type="button" class="marianne-btn" onclick="handleButtonClick('Prendre rendez-vous')" aria-label="Prendre rendez-vous">Prendre rendez-vous</button>
+                        <button type="button" class="marianne-btn" onclick="handleButtonClick('Créer mon entreprise')" aria-label="Créer mon entreprise">Créer mon entreprise</button>
+                        <button type="button" class="marianne-btn" onclick="handleButtonClick('Questions juridiques simples')" aria-label="Questions juridiques simples">Questions juridiques simples</button>
                     </div>
                 </div>
             </main>
