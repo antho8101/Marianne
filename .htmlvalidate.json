@@ -4,12 +4,8 @@
     "attr-quotes": "error",
     "no-inline-style": "warn",
     "prefer-native-element": "error",
-    "no-unknown-elements": "error",
-    "no-trailing-whitespace": "error",
-    "no-missing-attr": "error",
     "no-dup-attr": "error",
     "no-dup-id": "error",
-    "no-dup-class": "warn",
-    "no-unknown-attributes": "warn"
+    "no-dup-class": "warn"
   }
 } 

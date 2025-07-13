@@ -51,7 +51,7 @@
         <!-- Wrapper bleu autour de la partie blanche -->
         <div class="marianne-split-right-wrapper">
             <!-- Page de connexion -->
-            <main id="login-page" class="marianne-split-right" role="main" aria-label="Connexion FranceConnect">
+            <main id="login-page" class="marianne-split-right" aria-label="Connexion FranceConnect">
                 <div style="width:100%; max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 50px;">
                     <p class="fr-text text-center">
                         Connectez-vous avec votre compte France Connect<br>pour accéder à tous les services publics.
@@ -69,10 +69,11 @@
                 </div>
             </main>
             <!-- Page de chat IA, cachée par défaut -->
-            <main id="main-interface" class="marianne-split-right hidden" role="main" aria-label="Interface principale Marianne">
+            <main id="main-interface" class="marianne-split-right hidden" aria-label="Interface principale Marianne">
                 <div style="width:100%; max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 32px;">
                     <h2 class="marianne-question text-2xl md:text-3xl font-normal text-grey-200 mb-10 text-center" style="margin-top: 32px;">Comment puis-je vous aider&nbsp;?</h2>
-                    <form onsubmit="handleSubmit(event)" class="marianne-form" role="search">
+                    <!-- Correction du formulaire -->
+                    <form onsubmit="handleSubmit(event)" class="marianne-form">
                         <input
                             type="text"
                             id="message-input"
@@ -86,6 +87,7 @@
                         <div id="input-description" class="sr-only">
                             Tapez votre question ou sélectionnez une action ci-dessous
                         </div>
+                        <button type="submit" class="sr-only">Envoyer</button>
                     </form>
                     <div class="marianne-buttons">
                         <button class="marianne-btn" onclick="handleButtonClick('Payer mes impôts')" aria-label="Payer mes impôts">Payer mes impôts</button>
