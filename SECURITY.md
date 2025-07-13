@@ -6,7 +6,7 @@ Merci de contribuer à la sécurité du projet Marianne.
 
 Si vous découvrez une faille de sécurité, merci de la signaler immédiatement à l’équipe référente :
 
-- Email : contact@marianne.beta.gouv.fr
+- Email : carayon.anthony@gmail.com
 - Ou via une issue GitHub (privée de préférence)
 
 Nous traiterons votre signalement avec la plus grande attention et confidentialité. 
