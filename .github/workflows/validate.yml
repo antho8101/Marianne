@@ -27,7 +27,9 @@ jobs:
       run: npx html-validate "*.html"
         
     - name: Test accessibility with pa11y-ci
-      run: npx pa11y-ci --chrome-launcher-flags="--no-sandbox"
+      run: npx pa11y-ci
+      env:
+        PUPPETEER_ARGS: "--no-sandbox"
         
     - name: Check file structure
       run: |
