@@ -24,9 +24,7 @@ jobs:
       run: npm ci
       
     - name: Validate HTML
-      uses: Cyb3r-Jak3/html-validate-action@v0.6.0
-      with:
-        files: "*.html"
+      run: npx html-validate "*.html"
         
     - name: Test accessibility with pa11y-ci
       run: |
